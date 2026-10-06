@@ -1,0 +1,10 @@
+site_name: esdcghapp
+site_description: Delete Me App
+repo_url: https://github.com/pittar-rhdh/esdcgh
+
+plugins:
+  - techdocs-core
+
+# Note for content editors, edit only the section below
+nav:
+  - esdcghapp Documentation: index.md

@@ -1,0 +1,41 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: esdcghapp
+  description: Delete Me App
+  annotations:
+    backstage.io/source-location: url:https://github.com/pittar-rhdh/esdcgh/
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-id: esdcghapp
+    janus-idp.io/tekton: esdcghapp
+    argocd/app-selector: rht-gitops.com/openshift-gitops=esdcghapp
+    acs/deployment-name: "esdcghapp,postgresql-esdcghapp"
+  tags:
+    - java
+    - quarkus
+  links:
+    - url: https://devspaces.apps.prime.pitt.ca/#https://github.com/pittar-rhdh/esdcgh
+      title: Open in Dev Spaces
+      icon: web
+    - url: https://developers.redhat.com/blog
+      title: Red Hat Blog
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/teamleads
+  providesApis:
+    - esdcghapp
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: esdcghapp
+  title: My Demo App OpenAPI Specification
+  description: REST API endpoints for the My Demo App application
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:default/teamleads
+  definition:
+    $text: ./src/main/openapi/openapi.yaml
